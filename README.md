@@ -1,4 +1,4 @@
-Spark CommandLine Options
+Spark Command Line Options Parser
 ==========================
 
 A simple approach to parsing command-line options provided to a spark job. This supports both long options (--longopt) and regular options (-o), but does not work with combined short opts like (-adcf). We actually impose a restriction on parameter values to be provided only as a long option. 
@@ -14,10 +14,14 @@ We can also simply pass-through the command-line options when creating a spark-s
 MYCLASS="com.foo.bar.example"
 MYJAR="myexample-0.1.jar"
 
-spark-submit --master yarn --class $MYCLASS $MYJAR $@
+spark-submit --master yarn \
+  $MYOTHERSPARKOPTS \
+  --class $MYCLASS \
+  $MYJAR \
+  $@
 ```
 
-The code for performing this is relatively straight-forward:
+The code for performing the parsing is relatively straight-forward:
 
 ```
 object ParseOpts {

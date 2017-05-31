@@ -15,6 +15,6 @@ spark-submit --master yarn \
   $CMDOPTS_JAR \
   $@
 
-#  --input somefile.txt --table myTable 50 51 52
+#eg.  --input somefile.txt --table myTable 50 51 52
  
 
