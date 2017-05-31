@@ -27,15 +27,16 @@ object OptionTest {
     val fileName  = optMap.getOrElse("input", None)
     val tableName = optMap.getOrElse("table", None)
 
-    //if ( fileName.getClass() == String )
-      println(" ===>  fileName = " + fileName)
-    //else
-      //println("fileName is None")
+    println(" ===>  Expected Options: ")
+    println(" ===>  fileName = " + fileName)
     println(" ===>  table = " + tableName)
 
-    if ( optList.length < 3 )
-      println(" ===>  missing args")
+    println(" ===> OptionMap:")
+    optMap.foreach { x => println(" ===>    " + x._1 + " -> " + x._2) }
 
-    optList.foreach { x => println(" ===>  " + x + " " ) }
+    if ( optList.length < 3 )
+      println(" ===>  missing args (<3)")
+
+    optList.foreach { x => println(" ===>    " + x) }
   }
 }
