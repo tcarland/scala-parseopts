@@ -1,13 +1,11 @@
-/**  A simple argument/option parser where command line flags with no argument 
+/**  A simple argument/option parser where command line flags with no argument
  *   are defined as '-x' switches (boolean) and long options are defined as
- *   '--long-opt <val>' with a required argument. Any remaining arguments 
+ *   '--long-opt <val>' with a required argument. Any remaining arguments
  *   not defined as a switch are returned as the remainer List.
  **/
-package com.trace3.spark.util
+package com.trace3.util
 
-
-import scala.collection.immutable.List
-import scala.collection.immutable.Map
+import scala.collection.immutable.{List, Map}
 
 
 object ParseOpts {
@@ -33,6 +31,27 @@ object ParseOpts {
     nextOpt(args, Map())
   }
 
+
+  def usage =
+    """
+      |ParseOpts <args>
+      |
+    """.stripMargin
+
+
+  def main ( args: Array[String] ) : Unit = {
+    val (optMap, optList) = ParseOpts.parseOpts(args.toList)
+
+    println("Args: " + args.length.toString)
+    args.foreach { x => println(" => '" + x + "'")}
+    println("")
+
+    println(" ==> OptionMap:" + optMap.size.toString)
+    optMap.foreach { x => println(" ===>    " + x._1 + " -> " + x._2) }
+
+    println(" --> OptionList: " + optList.length.toString)
+    optList.foreach { x => println(" -->    " + x) }
+  }
 }
 
 

@@ -6,12 +6,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.trace3.spark.util</groupId>
-  <artifactId>spark-parseopts</artifactId>
-  <version>0.1.1</version>
+  <groupId>com.trace3.util</groupId>
+  <artifactId>scala-parseopts</artifactId>
+  <version>0.1.2</version>
   <packaging>jar</packaging>
   <description>Spark CommandLine Options Parser</description>
-  <name>spark-parseopts</name>
+  <name>scala-parseopts</name>
   <organization>
   	<name>trace3.com</name>
   </organization>
@@ -68,7 +68,7 @@
           <configuration>
             <archive>
               <manifest>
-                <mainClass>ParseOptsTest</mainClass>
+                <mainClass>ParseOpts</mainClass>
               </manifest>
             </archive>
             <descriptorRefs>
