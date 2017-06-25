@@ -1,13 +1,17 @@
-/**  A simple argument/option parser where command line flags with no argument
- *   are defined as '-x' switches (boolean) and long options are defined as
- *   '--long-opt <val>' with a required argument. Any remaining arguments
- *   not defined as a switch are returned as the remainer List.
+/**  ParseOpts.scala
+  *  
+  *  @author Timothy C. Arland <tcarland@gmail.com>
+  *
  **/
 package com.trace3.util
 
 import scala.collection.immutable.{List, Map}
 
-
+/**  A simple argument/option parser where command line flags with no argument
+ *   are defined as '-x' switches (boolean) and long options are defined as
+ *   '--long-opt <val>' with a required argument. Any remaining arguments
+ *   not defined as a switch are returned as the remainer List.
+ **/
 object ParseOpts {
 
   type OptMap  = Map[String, String]

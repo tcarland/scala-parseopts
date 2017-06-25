@@ -1,13 +1,19 @@
-Spark Command Line Options Parser
-==========================
+Scala Command Line Options Parser
+=================================
 
-A simple approach to parsing command-line options provided to a spark job. This supports both long options (--longopt) and regular options (-o), but does not work with combined short opts like (-adcf). We actually impose a restriction on parameter values to be provided only as a long option. 
+A simple approach to parsing command-line options provided to a scala application. This supports both long 
+options (--longopt) and regular options (-o), but does not work with combined short opts like (-adcf).
+There is a restriction on parameter values to be provided only as a long option, short options are only 
+switches.
 
-It will additionally support non-options as long as they are provided last. (--opt1 foo -f -d argX argY argZ). As a result, the options are returned as both a (***scala.collection.immutable***) **Map** of options and a **List** of arguments.
+It will additionally support non-options as long as they are provided last. (--opt1 foo -f -d argX argY argZ). 
+As a result, the options are returned as both a (***scala.collection.immutable***) **Map** of options and 
+a **List** of arguments.
 
-This provides a bit more robustness in providing arguments to a spark job since the order of options is now interchangeable and generally cleaner than just providing flat arguments to spark-submit. 
+This provides a bit more robustness in providing arguments to a scala application since the order of 
+options is now interchangeable and generally cleaner than just providing a flat list of arguments.
 
-We can also simply pass-through the command-line options when creating a spark-submit wrapperscript:
+We can also simply pass-through the command-line options when creating a wrapperscript:
 
 ```
 #!/bin/bash
