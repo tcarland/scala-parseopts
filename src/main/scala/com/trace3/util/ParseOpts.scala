@@ -1,4 +1,4 @@
-/**  ParseOpts.scala
+/**  ParseOpts.scala - A simple scala command-line parser
   *  
   *  @author Timothy C. Arland <tcarland@gmail.com>
   *

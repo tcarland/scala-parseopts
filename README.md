@@ -1,19 +1,19 @@
 Scala Command Line Options Parser
 =================================
 
-A simple approach to parsing command-line options provided to a scala application. This supports both long 
-options (--longopt) and regular options (-o), but does not work with combined short opts like (-adcf).
-There is a restriction on parameter values to be provided only as a long option, short options are only 
-switches.
+A simplified scala approach to parsing command-line options. This supports both long 
+options (--longopt) and short/regular options (-o). Short options do not work combined (-asdf),
+but must be provided individually (-a -s -d -f). There is an additional restriction that short 
+options are boolean switches only and long options require parameters.
 
-It will additionally support non-options as long as they are provided last. (--opt1 foo -f -d argX argY argZ). 
-As a result, the options are returned as both a (***scala.collection.immutable***) **Map** of options and 
-a **List** of arguments.
+Conveniently ParseOpts will additionally support non-options as long as they are provided last.
+ (--opt1 foo -f -d argX argY argZ).  As a result of this requirement, options are returned as 
+both a (***scala.collection.immutable***) **Map** of options and **List** of arguments.
 
-This provides a bit more robustness in providing arguments to a scala application since the order of 
-options is now interchangeable and generally cleaner than just providing a flat list of arguments.
-
-We can also simply pass-through the command-line options when creating a wrapperscript:
+This simplified approach works well with distributed uses of scala (spark). And at the very 
+least provides the flexibility of allowing options to be clearly defined as well as being 
+provided in any order. Lastly, it offers a some clarity when using launch scripts to wrap a 
+scala application. For example:
 
 ```
 #!/bin/bash
@@ -27,7 +27,8 @@ spark-submit --master yarn \
   $@
 ```
 
-The code for performing the parsing is relatively straight-forward:
+The code for performing the parsing is relatively straight-forward and consists primarily of 
+the following scala function:
 
 ```
 object ParseOpts {
