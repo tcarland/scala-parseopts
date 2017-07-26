@@ -4,8 +4,8 @@ Scala Command Line Options Parser
 A simplified scala approach to parsing command-line options. This supports both long 
 options (--longopt) and short/regular options (-o). Short options do not work combined 
 (-asdf), but must be provided individually (-a -s -d -f). There is an additional 
-restriction that short options are boolean switches only and long options require 
-parameters.
+restriction that short options are boolean switches only and do not take arguments.
+Long options do not require parameters.
 
 Conveniently ParseOpts will additionally support non-options as long as they are 
 provided last, eg. --opt1 foo -f -d argX argY argZ.  As a result of this feature, 
@@ -34,6 +34,7 @@ primarily of the following scala function:
 
 ```
 object ParseOpts {
+
   type OptMap  = Map[String, String]
   type OptList = List[String]
   
