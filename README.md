@@ -11,7 +11,7 @@ arguments.
 Conveniently ParseOpts will additionally support non-options as long as they 
 are provided last:
 ```
-myApp -f -d --foo1 bar argX argY argZ.  
+myApp -f -d --foo1 bar argX argY argZ  
 ```
 To support this feature, options are returned as a 
 (***scala.collection.immutable***) **Map** of options and **List** of 
