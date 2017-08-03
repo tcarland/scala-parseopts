@@ -1,21 +1,26 @@
 Scala Command Line Options Parser
 =================================
 
-A simplified scala approach to parsing command-line options. This supports both 
-long options (--longopt) and short/regular options (-o). Short options do not 
-work combined (-asdf), but must be provided individually (-a -s -d -f). There 
-is an additional restriction that short options are boolean switches only and 
-do not take arguments. Long options, on the other hand, must have arguments. 
+A simplified scala approach to parsing command-line options. This supports 
+both long options (--longopt) and short/regular options (-o). Short options 
+do not work combined (-asdf), but must be provided individually (-a -s -d -f). 
+There is an additional restriction that short options are boolean switches 
+only and do not take arguments. Long options, on the other hand, must have 
+arguments. 
 
-Conveniently ParseOpts will additionally support non-options as long as they are 
-provided last, eg. --opt1 foo -f -d argX argY argZ.  As a result of this feature, 
-options are returned as both a (***scala.collection.immutable***) **Map** of options 
-and **List** of remaining arguments.
+Conveniently ParseOpts will additionally support non-options as long as they 
+are provided last:
+```
+myApp -f -d --foo1 bar argX argY argZ.  
+```
+To support this feature, options are returned as a 
+(***scala.collection.immutable***) **Map** of options and **List** of 
+remaining arguments.
 
-This simplified approach works well with distributed uses of scala (ie. spark). And at 
-the least provides the flexibility of allowing options to be clearly defined as well 
-as being provided in any order. Lastly, it offers a some clarity when using launch 
-scripts to wrap a scala application. For example:
+This simplified approach works well with distributed uses of scala (ie. spark). 
+And at the least provides the flexibility of allowing options to be clearly 
+defined as well as being provided in any order. Lastly, it offers a some clarity 
+when using launch scripts to wrap a scala application. For example:
 
 ```
 #!/bin/bash
@@ -58,8 +63,6 @@ object ParseOpts {
 }
 ```
 
-
 -tca
-
 
 
