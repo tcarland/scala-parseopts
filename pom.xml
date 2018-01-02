@@ -8,7 +8,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.trace3.util</groupId>
   <artifactId>scala-parseopts</artifactId>
-  <version>0.1.4</version>
+  <version>0.1.5</version>
   <packaging>jar</packaging>
   <description>Spark Command-line Options Parser</description>
   <name>scala-parseopts</name>
@@ -43,40 +43,10 @@
           <artifactId>hadoop-client</artifactId>
           <version>${hadoop.version}</version>
       </dependency>
-      <dependency>
-          <groupId>org.apache.spark</groupId>
-          <artifactId>spark-core_${scala.tools.version}</artifactId>
-          <version>${spark.version}</version>
-      </dependency>
-      <dependency>
-          <groupId>org.apache.spark</groupId>
-          <artifactId>spark-sql_${scala.tools.version}</artifactId>
-          <version>${spark.version}</version>
-      </dependency>
-      <dependency>
-          <groupId>org.apache.spark</groupId>
-          <artifactId>spark-hive_${scala.tools.version}</artifactId>
-          <version>${spark.version}</version>
-      </dependency>
   </dependencies>
 
   <build>
       <plugins>
-<!--
-        <plugin>
-          <artifactId>maven-assembly-plugin</artifactId>
-          <configuration>
-            <archive>
-              <manifest>
-                <mainClass>ParseOpts</mainClass>
-              </manifest>
-            </archive>
-            <descriptorRefs>
-              <descriptorRef>jar-with-dependencies</descriptorRef>
-            </descriptorRefs>
-          </configuration>
-        </plugin>
--->
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>

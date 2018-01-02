@@ -23,8 +23,8 @@ object ParseOpts {
   def parseOpts ( args: OptList ) : (OptMap, OptList)  = 
   {
     def nextOpt ( argList: OptList, optMap: OptMap ) : (OptMap, OptList) = {
-      val longOpt = "^--(\\S+)".r
-      val regOpt  = "^-(\\S+)".r
+      val longOpt = """^--(\S+)""".r
+      val regOpt  = """^-(\S+)""".r
 
       argList match {
         case Nil => (optMap, argList)
