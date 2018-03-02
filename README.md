@@ -65,4 +65,27 @@ object ParseOpts {
 
 -tca
 
+#### Installation
+
+
+  This project currently lacks a public maven artifact, but can be 
+installed locally after building via *'mvn package'*: 
+
+```
+mvn install:install-file \
+  -Dpackaging=jar -DgroupId=com.trace3.util \
+  -DartifactId=scala-parseopts -Dversion=0.1.5 \
+  -Dfile=target/scala-parseopts-0.1.5.jar
+```
+
+The maven artifact for this dependency would then be:
+
+```
+  <dependency>
+    <groupId>com.trace3.util</groupId>
+    <artifactId>scala-parseopts</artifactId>
+    <version>0.1.5</version>
+  </dependency>
+```
+
 
