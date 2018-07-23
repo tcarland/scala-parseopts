@@ -14,7 +14,7 @@ are provided last:
 myApp -f -d --foo1 bar argX argY argZ  
 ```
 To support this feature, options are returned as a 
-(***scala.collection.immutable***) **Map** of options and **List** of 
+*scala.collection.immutable*.**Map** of options and **List** of 
 remaining arguments.
 
 This simplified approach works well with distributed uses of scala (ie. spark). 
@@ -31,7 +31,7 @@ spark-submit --master yarn \
   $MYOTHERSPARKOPTS \
   --class $MYCLASS \
   $MYJAR \
-  $@
+  $@ 
 ```
 
 The code for performing the parsing is relatively straight-forward and consists 
@@ -51,8 +51,8 @@ object ParseOpts {
 
       argList match {
         case Nil => (optMap, argList)
-        case longOpt(opt)  :: value  :: tail => nextOpt(tail, optMap ++ Map(opt -> value))
-        case regOpt(opt)             :: tail => nextOpt(tail, optMap ++ Map(opt -> null))
+        case longOpt(opt) :: value :: tail => nextOpt(tail, optMap ++ Map(opt -> value))
+        case regOpt(opt)           :: tail => nextOpt(tail, optMap ++ Map(opt -> null))
         case _ => (optMap, argList)
       }
     }
@@ -63,13 +63,12 @@ object ParseOpts {
 }
 ```
 
--tca
 
 #### Installation
 
 
   This project currently lacks a public maven artifact, but can be 
-installed locally after building via *'mvn package'*: 
+installed locally after building via **mvn package**: 
 
 ```
 mvn install:install-file \
