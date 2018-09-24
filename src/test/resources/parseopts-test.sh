@@ -1,5 +1,7 @@
 #!/bin/bash
-# 
+#
+
+
 SCALA_FILES="src/main/scala/com/trace3/util/ParseOpts.scala src/test/scala/ParseOptsTest.scala"
 SCALA_CLASS="ParseOptsTest"
 
