@@ -1,5 +1,5 @@
 /**  ParseOpts.scala - A simple scala command-line parser
-  *  
+  *
   *  @author Timothy C. Arland <tcarland@gmail.com>
   *
  **/
@@ -18,11 +18,11 @@ object ParseOpts {
 
   type OptMap  = Map[String, String]
   type OptList = List[String]
- 
-  val Version  = """v0.1.6"""
+
+  val Version  = """v0.1.7"""
 
 
-  def parseOpts ( args: OptList ) : (OptMap, OptList)  = 
+  def parseOpts ( args: OptList ) : (OptMap, OptList)  =
   {
     def nextOpt ( argList: OptList, optMap: OptMap ) : (OptMap, OptList) = {
       val longOpt = """^--(\S+)""".r
@@ -35,10 +35,8 @@ object ParseOpts {
         case _    => (optMap, argList)
       }
     }
-    
+
     nextOpt(args, Map())
   }
 
 }
-
-

@@ -1,8 +1,8 @@
 import com.trace3.util.ParseOpts
 
 object ParseOptsTest {
-  
-  def usage =
+
+  val usage : String =
     """
       |ParseOptsTest <args>
       |
