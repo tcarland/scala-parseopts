@@ -2,8 +2,10 @@ Scala Command Line Options Parser
 =================================
 
 ## Overview
-A simple Scala approach to parsing command-line options. This 
-supports both long options (--longopt <val>) and short options (-o). 
+
+A Scala approach to parsing command-line options. This supports both 
+long options (--longopt <val>) and short options (-o). 
+
 Short options do not work combined (-asdf), but must be provided 
 individually, eg. '-a -s -d -f'.  There is an additional restriction 
 that short options are boolean switches only and do not take 
@@ -19,7 +21,7 @@ To support this feature, options are returned as a
 *scala.collection.immutable*.**Map** of options and **List** of
 remaining arguments.
 
-This approach works well for use with spark, and at the least, 
+This approach works well for use with Apache Spark, and at the least, 
 provides the flexibility of allowing options to be clearly defined 
 and provided in any order.
 ```
@@ -40,6 +42,8 @@ The code for performing the parsing is relatively straight-forward
 and consists primarily of the following scala function:
 
 ```
+import scala.collection.immutable.{List, Map}
+
 object ParseOpts {
 
   type OptMap  = Map[String, String]
@@ -65,7 +69,7 @@ object ParseOpts {
 }
 ```
 
-### Installation
+## Installation
 
   This project currently lacks a maven artifact, but can be installed 
 locally after building via **mvn package**:
@@ -73,8 +77,8 @@ locally after building via **mvn package**:
 ```
 mvn install:install-file \
   -Dpackaging=jar -DgroupId=com.trace3.util \
-  -DartifactId=scala-parseopts -Dversion=1.0.1 \
-  -Dfile=target/scala-parseopts-1.0.1.jar
+  -DartifactId=scala-parseopts -Dversion=1.0.2 \
+  -Dfile=target/scala-parseopts-1.0.2.jar
 ```
 
 The maven artifact for this dependency would then be:
