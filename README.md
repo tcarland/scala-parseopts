@@ -86,7 +86,7 @@ The maven artifact for this dependency would then be:
   <dependency>
     <groupId>com.trace3.util</groupId>
     <artifactId>scala-parseopts</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
   </dependency>
 ```
 
