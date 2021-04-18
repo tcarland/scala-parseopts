@@ -77,8 +77,8 @@ locally after building via **mvn package**:
 ```
 mvn install:install-file \
   -Dpackaging=jar -DgroupId=com.trace3.util \
-  -DartifactId=scala-parseopts -Dversion=1.3.0 \
-  -Dfile=target/scala-parseopts-1.3.0.jar
+  -DartifactId=scala-parseopts -Dversion=1.3.0_2.13 \
+  -Dfile=target/scala-parseopts-1.3.0_2.13.jar
 ```
 
 The maven artifact for this dependency would then be:
@@ -86,7 +86,7 @@ The maven artifact for this dependency would then be:
   <dependency>
     <groupId>com.trace3.util</groupId>
     <artifactId>scala-parseopts</artifactId>
-    <version>1.0.2</version>
+    <version>1.3.0_2.13</version>
   </dependency>
 ```
 
