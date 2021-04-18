@@ -8,7 +8,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.trace3.util</groupId>
   <artifactId>scala-parseopts</artifactId>
-  <version>1.3.0_2.13</version>
+  <version>1.3.0_${scala.binary.version}</version>
   <packaging>jar</packaging>
   <description>Scala Command-line Options Parser</description>
   <name>scala-parseopts</name>
@@ -17,17 +17,34 @@
   </organization>
 
   <developers>
-      <developer>
-          <id>tarland@trace3.com</id>
-          <name>Timothy C. Arland</name>
-      </developer>
+    <developer>
+      <id>tarland@trace3.com</id>
+        <name>Timothy C. Arland</name>
+    </developer>
   </developers>
 
   <properties>
-      <encoding>UTF-8</encoding>
-      <scala.version>2.13.5</scala.version>
-      <scala.tools.version>2.13</scala.tools.version>
+    <encoding>UTF-8</encoding>
+    <scala.version>2.13.5</scala.version>
+    <scala.binary.version>2.13</scala.binary.version>
   </properties>
+
+  <profiles>
+    <profile>
+      <id>scala-2.12</id>
+      <properties>
+        <scala.binary.version>2.12</scala.binary.version>
+        <scala.version>2.12.13</scala.version>
+      </properties>
+    </profile>
+    <profile>
+      <id>scala-2.13</id>
+      <properties>
+        <scala.binary.version>2.13</scala.binary.version>
+        <scala.version>2.13.5</scala.version>
+      </properties>
+    </profile>
+  </profiles>
 
   <dependencies>
       <dependency>

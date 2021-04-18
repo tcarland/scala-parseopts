@@ -69,10 +69,41 @@ object ParseOpts {
 }
 ```
 
+## Building 
+
+Builds are Scala Version specific and provided as *profiles* to Maven. Currently 
+supported Scala versions by profile:
+ - scala-2.12
+ - scala-2.13
+
+Build the *jar* file via `mvn package`
+```
+$ mvn package -Pscala-2.13
+[ ... ]
+INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ scala-parseopts ---
+[INFO] Building jar: /home/tca/src/github/scala-parseopts/target/scala-parseopts-1.3.0_2.13.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  15.643 s
+[INFO] Finished at: 2021-04-18T12:48:14-07:00
+[INFO] ------------------------------------------------------------------------
+```
+
+Note that the POM currently sets the artifactId version with a variable which 
+causes Maven to throw a *Warning* that `version` contains an expression. This 
+is a known cross-compile issue with Scala binary versions and maven. This project
+was tested with the following versions:
+- Maven 3.6.3 
+- Java 1.8, Java 11
+- Scala 2.12, 2.13
+
+
 ## Installation
 
   This project currently lacks a maven artifact, but can be installed 
-locally after building via **mvn package**:
+locally after building via **mvn package**. Note the scala binary version 
+as described above.
 
 ```
 mvn install:install-file \
