@@ -19,7 +19,13 @@
   <developers>
     <developer>
       <id>tarland@trace3.com</id>
-        <name>Timothy C. Arland</name>
+      <name>Timothy C. Arland</name>
+      <email>tarland@trace3.com</email>
+    </developer>
+    <developer>
+      <id>tcarland@trace3.com</id>
+      <name>Timothy C. Arland</name>
+      <email>tcarland@gmail.com</email>
     </developer>
   </developers>
 
