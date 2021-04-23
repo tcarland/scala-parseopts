@@ -19,7 +19,7 @@ object ParseOpts {
   type OptMap  = Map[String, String]
   type OptList = List[String]
 
-  val Version  = """v1.0.2"""
+  val Version  = """v1.3.0"""
 
 
   def parseOpts ( args: OptList ) : (OptMap, OptList)  =

@@ -23,6 +23,14 @@
     </developer>
   </developers>
 
+  <distributionManagement>
+    <repository>
+      <id>tca-github</id>
+      <name>tca-maven</name>
+      <url>https://maven.pkg.github.com/tcarland/scala-parseopts</url>
+    </repository>
+ </distributionManagement>
+
   <properties>
     <encoding>UTF-8</encoding>
     <scala.version>2.13.5</scala.version>
