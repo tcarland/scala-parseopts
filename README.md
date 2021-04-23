@@ -69,24 +69,72 @@ object ParseOpts {
 }
 ```
 
-## Installation
+## Building 
 
-  This project currently lacks a maven artifact, but can be installed 
-locally after building via **mvn package**:
+Builds are Scala Version specific and provided as *profiles* to Maven. Currently 
+supported Scala versions by profile:
+ - scala-2.12
+ - scala-2.13
 
+Build the *jar* file via `mvn package`
+```
+$ mvn package -Pscala-2.13
+[ ... ]
+INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ scala-parseopts ---
+[INFO] Building jar: /home/tca/src/github/scala-parseopts/target/scala-parseopts-1.3.0_2.13.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  15.643 s
+[INFO] Finished at: 2021-04-18T12:48:14-07:00
+[INFO] ------------------------------------------------------------------------
+```
+
+Note that the POM currently sets the artifactId version with a variable which 
+causes Maven to throw a *Warning* that `version` contains an expression. This 
+is a known cross-compile issue with Scala binary versions and maven. This project
+was tested with the following versions:
+- Maven 3.6.3 
+- Java 1.8, Java 11
+- Scala 2.12, 2.13
+
+
+## Using ParseOpts
+
+The project has a GitHub based Maven Repository, which would need an entry 
+to either maven settings or the project pom.
+```
+    <repositories>
+      <repository>
+        <id>scala-parseopts</id>
+        <url>https://maven.pkg.github.com/tcarland/scala-parseopts</url>
+      </repository>
+    <repositories>
+```
+
+Optionally create a local maven entry from the build of this repo
+Note the scala binary version as described above, which should match the 
+parent project.
 ```
 mvn install:install-file \
   -Dpackaging=jar -DgroupId=com.trace3.util \
-  -DartifactId=scala-parseopts -Dversion=1.0.2_2.12 \
-  -Dfile=target/scala-parseopts-1.0.2_2.12.jar
+  -DartifactId=scala-parseopts -Dversion=1.3.0_2.13 \
+  -Dfile=target/scala-parseopts-1.3.0_2.13.jar
 ```
 
-The maven artifact for this dependency would then be:
+The maven artifact for this dependency:
 ```
   <dependency>
     <groupId>com.trace3.util</groupId>
     <artifactId>scala-parseopts</artifactId>
-    <version>1.0.2_2.12</version>
+    <version>1.3.0_2.13</version>
   </dependency>
 ```
-
+or
+```
+  <dependency>
+    <groupId>com.trace3.util</groupId>
+    <artifactId>scala-parseopts</artifactId>
+    <version>1.3.0_2.12</version>
+  </dependency>
+```
