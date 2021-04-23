@@ -102,7 +102,8 @@ was tested with the following versions:
 ## Using ParseOpts
 
 The project has a GitHub based Maven Repository, which would need an entry 
-to either maven settings or the project pom.
+to either maven settings or the project pom. However, this currently requires
+authentication by GitHub.
 ```
     <repositories>
       <repository>
