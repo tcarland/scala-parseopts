@@ -109,7 +109,7 @@ to either maven settings or the project pom.
         <id>scala-parseopts</id>
         <url>https://maven.pkg.github.com/tcarland/scala-parseopts</url>
       </repository>
-    <repositories>
+    </repositories>
 ```
 
 Optionally create a local maven entry from the build of this repo
