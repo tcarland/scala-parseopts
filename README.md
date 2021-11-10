@@ -73,6 +73,7 @@ object ParseOpts {
 
 Builds are Scala Version specific and provided as *profiles* to Maven. Currently 
 supported Scala versions by profile:
+ - scala-2.11
  - scala-2.12
  - scala-2.13
 
