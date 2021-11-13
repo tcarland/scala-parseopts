@@ -16,7 +16,9 @@ project/plugins/project/
 .scala_dependencies
 .worksheet
 .sc
+
 **/.idea/libraries
+.vscode
 .idea
 .project
 .classpath
