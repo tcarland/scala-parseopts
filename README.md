@@ -24,13 +24,13 @@ remaining arguments.
 This approach works well for use with Apache Spark, and at the least, 
 provides the flexibility of allowing options to be clearly defined 
 and provided in any order.
-```
+```bash
 #!/bin/bash
 MYCLASS="com.foo.bar.example"
 MYJAR="myexample-0.1.jar"
 
 spark-submit --master yarn \
-  $MYOTHERSPARKOPTS \
+  $SPARK_CONF_ARGS \
   --class $MYCLASS \
   $MYJAR \
   $@
@@ -40,8 +40,7 @@ spark-submit --master yarn \
 
 The code for performing the parsing is relatively straight-forward 
 and consists primarily of the following scala function:
-
-```
+```scala
 import scala.collection.immutable.{List, Map}
 
 object ParseOpts {
@@ -62,7 +61,6 @@ object ParseOpts {
         case _ => (optMap, argList)
       }
     }
-
     nextOpt(args, Map())
   }
 
@@ -91,13 +89,14 @@ INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ scala-parseopts ---
 [INFO] ------------------------------------------------------------------------
 ```
 
-Note that the POM currently sets the artifactId version with a variable which 
+Note that the POM currently sets the *artifactId* version with a variable which 
 causes Maven to throw a *Warning* that `version` contains an expression. This 
-is a known cross-compile issue with Scala binary versions and maven. This project
-was tested with the following versions:
+is a known cross-compile issue with Scala binary versions and maven. 
+
+This project was tested with the following versions:
 - Maven 3.6.3 
-- Java 1.8, Java 11
-- Scala 2.12, 2.13
+- Java 1.8, Java 1.11
+- Scala 2.11, 2.12, 2.13
 
 
 ## Using ParseOpts
@@ -105,19 +104,19 @@ was tested with the following versions:
 The project has a GitHub based Maven Repository, which would need an entry 
 to either maven settings or the project pom. However, this currently requires
 authentication by GitHub.
-```
-    <repositories>
+```xml
+  <repositories>
       <repository>
-        <id>scala-parseopts</id>
-        <url>https://maven.pkg.github.com/tcarland/scala-parseopts</url>
+          <id>scala-parseopts</id>
+          <url>https://maven.pkg.github.com/tcarland/scala-parseopts</url>
       </repository>
-    </repositories>
+  </repositories>
 ```
 
 Optionally create a local maven entry from the build of this repo
 Note the scala binary version as described above, which should match the 
 parent project.
-```
+```sh
 mvn install:install-file \
   -Dpackaging=jar -DgroupId=com.trace3.util \
   -DartifactId=scala-parseopts -Dversion=1.3.0_2.13 \
@@ -125,18 +124,18 @@ mvn install:install-file \
 ```
 
 The maven artifact for this dependency:
-```
+```xml
   <dependency>
-    <groupId>com.trace3.util</groupId>
-    <artifactId>scala-parseopts</artifactId>
-    <version>1.3.0_2.13</version>
+      <groupId>com.trace3.util</groupId>
+      <artifactId>scala-parseopts</artifactId>
+      <version>1.3.0_2.13</version>
   </dependency>
 ```
 or
-```
+```xml
   <dependency>
-    <groupId>com.trace3.util</groupId>
-    <artifactId>scala-parseopts</artifactId>
-    <version>1.3.0_2.12</version>
+      <groupId>com.trace3.util</groupId>
+      <artifactId>scala-parseopts</artifactId>
+      <version>1.3.0_2.12</version>
   </dependency>
 ```

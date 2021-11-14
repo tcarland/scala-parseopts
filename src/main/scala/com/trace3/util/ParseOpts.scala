@@ -9,17 +9,17 @@ import scala.collection.immutable.{List, Map}
 
 
 
-/**  A simple argument/option parser where command line flags with no argument
+/**  An argument/option parser where command line flags with no argument
  *   are defined as '-x' switches (boolean) and long options are defined as
  *   '--long-opt <val>' with a required argument. Any remaining arguments
- *   not defined as a switch are returned as a remainer List.
+ *   not defined as a switch are returned as a List.
  **/
 object ParseOpts {
 
   type OptMap  = Map[String, String]
   type OptList = List[String]
 
-  val Version  = """v1.3.0"""
+  val Version  = """v1.3.1"""
 
 
   def parseOpts ( args: OptList ) : (OptMap, OptList)  =
