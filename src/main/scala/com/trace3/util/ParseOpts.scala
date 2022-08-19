@@ -8,7 +8,6 @@ package com.trace3.util
 import scala.collection.immutable.{List, Map}
 
 
-
 /**  An argument/option parser where command line flags with no argument
  *   are defined as '-x' switches (boolean) and long options are defined as
  *   '--long-opt <val>' with a required argument. Any remaining arguments
@@ -19,7 +18,7 @@ object ParseOpts {
   type OptMap  = Map[String, String]
   type OptList = List[String]
 
-  val Version  = """v1.4.1"""
+  val Version  = """v1.4.2"""
 
 
   def parseOpts ( args: OptList ) : (OptMap, OptList)  =
