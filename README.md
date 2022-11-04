@@ -71,7 +71,7 @@ object ParseOpts {
 
 Builds are Scala Version specific and provided as *profiles* to Maven. Currently 
 supported Scala versions by profile:
- - scala-2.11
+ - scala-2.11 *deprecated*
  - scala-2.12
  - scala-2.13
 
@@ -94,7 +94,7 @@ causes Maven to throw a *Warning* that `version` contains an expression. This
 is a known cross-compile issue with Scala binary versions and maven. 
 
 This project was tested with the following versions:
-- Maven 3.6.3 
+- Maven 3.6.x 
 - Java 1.8, Java 11
 - Scala 2.11, 2.12, 2.13
 
@@ -119,8 +119,8 @@ parent project.
 ```sh
 mvn install:install-file \
   -Dpackaging=jar -DgroupId=com.trace3.util \
-  -DartifactId=scala-parseopts -Dversion=1.4.1_2.13 \
-  -Dfile=target/scala-parseopts-1.4.1_2.13.jar
+  -DartifactId=scala-parseopts -Dversion=1.5.0_2.13 \
+  -Dfile=target/scala-parseopts-1.5.0_2.13.jar
 ```
 
 The maven artifact for this dependency:
@@ -128,7 +128,7 @@ The maven artifact for this dependency:
   <dependency>
       <groupId>com.trace3.util</groupId>
       <artifactId>scala-parseopts</artifactId>
-      <version>1.4.1_2.13</version>
+      <version>1.5.0_2.13</version>
   </dependency>
 ```
 
