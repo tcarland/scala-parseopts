@@ -1,7 +1,5 @@
-Scala Command Line Options Parser
-=================================
-
-## Overview
+Scala Command Line Options 
+==========================
 
 A Scala approach to parsing command-line options. This supports both 
 long options (--longopt <val>) and short options (-o). 
@@ -24,6 +22,7 @@ remaining arguments.
 This approach works well for use with Apache Spark, and at the least, 
 provides the flexibility of allowing options to be clearly defined 
 and provided in any order.
+
 ```bash
 #!/bin/bash
 MYCLASS="com.foo.bar.example"
@@ -96,7 +95,7 @@ is a known cross-compile issue with Scala binary versions and maven.
 This project was tested with the following versions:
 - Maven 3.6.x 
 - Java 1.8, Java 11
-- Scala 2.11, 2.12, 2.13
+- Scala 2.12, 2.13
 
 
 ## Using ParseOpts
