@@ -1,5 +1,7 @@
 name: Build and Publish package 
 on:
+  push:
+    branches: [ "tca-154" ]
   release:
     types: [created]
 jobs:
