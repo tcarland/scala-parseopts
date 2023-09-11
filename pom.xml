@@ -7,7 +7,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.trace3.util</groupId>
     <artifactId>scala-parseopts</artifactId>
-    <version>1.5.2_${scala.binary.version}</version>
+    <version>1.5.4_${scala.binary.version}</version>
     <packaging>jar</packaging>
     <description>Scala Command-line Options Parser</description>
     <name>scala-parseopts</name>
@@ -15,18 +15,6 @@
     <organization>
   	    <name>trace3.com</name>
     </organization>
-
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
- 
-    <scm>
-        <url>https://github.com/tcarland/scala-parseopts</url>
-    </scm>
 
     <developers>
         <developer>
@@ -43,8 +31,8 @@
 
     <distributionManagement>
         <repository>
-            <id>tca-github</id>
-            <name>tca-github</name>
+            <id>github</id>
+            <name>GitHub</name>
             <url>https://maven.pkg.github.com/tcarland/scala-parseopts</url>
         </repository>
     </distributionManagement>
