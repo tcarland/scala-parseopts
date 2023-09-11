@@ -1,7 +1,5 @@
 name: Build and Publish package 
 on:
-  push:
-    branches: [ "tca-154" ]
   release:
     types: [created]
 jobs:
@@ -19,12 +17,19 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          cache: 'maven'
 
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
       - name: Publish package
         run: mvn deploy
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Build with Maven
+        run: mvn -B -Pscala-2.12 package --file pom.xml
+
+      - name: Publish package
+        run: mvn --batch-mode -Pscala-2.12 deploy
         env:
           GITHUB_TOKEN: ${{ github.token }}

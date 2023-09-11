@@ -99,9 +99,8 @@ This project was tested with the following versions:
 
 ## Using ParseOpts
 
-The project has a GitHub based Maven Repository, which would need an entry 
-to either maven settings or the project pom. However, this currently requires
-authentication by GitHub.
+The project has a GitHub based Maven Repository, which requires authentication 
+by GitHub. This generally involves configuring settings.xml and the project POM. 
 ```xml
   <repositories>
       <repository>
