@@ -43,8 +43,8 @@
 
     <distributionManagement>
         <repository>
-            <id>tca-github</id>
-            <name>tca-github</name>
+            <id>github</id>
+            <name>GitHub</name>
             <url>https://maven.pkg.github.com/tcarland/scala-parseopts</url>
         </repository>
     </distributionManagement>
