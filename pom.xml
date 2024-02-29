@@ -7,7 +7,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.trace3.util</groupId>
     <artifactId>scala-parseopts</artifactId>
-    <version>1.5.4_${scala.binary.version}</version>
+    <version>1.5.5_${scala.binary.version}</version>
     <packaging>jar</packaging>
     <description>Scala Command-line Options Parser</description>
     <name>scala-parseopts</name>
@@ -39,7 +39,7 @@
 
     <properties>
         <encoding>UTF-8</encoding>
-        <scala.version>2.13.10</scala.version>
+        <scala.version>2.13.13</scala.version>
         <scala.binary.version>2.13</scala.binary.version>
     </properties>
 
@@ -48,14 +48,14 @@
             <id>scala-2.12</id>
             <properties>
                 <scala.binary.version>2.12</scala.binary.version>
-                <scala.version>2.12.17</scala.version>
+                <scala.version>2.12.19</scala.version>
             </properties>
         </profile>
         <profile>
             <id>scala-2.13</id>
             <properties>
                 <scala.binary.version>2.13</scala.binary.version>
-                <scala.version>2.13.10</scala.version>
+                <scala.version>2.13.13</scala.version>
             </properties>
         </profile>
     </profiles>
