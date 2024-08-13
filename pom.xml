@@ -39,7 +39,7 @@
 
     <properties>
         <encoding>UTF-8</encoding>
-        <scala.version>2.13.13</scala.version>
+        <scala.version>2.13.14</scala.version>
         <scala.binary.version>2.13</scala.binary.version>
     </properties>
 
