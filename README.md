@@ -78,7 +78,7 @@ Build the *jar* file via `mvn package`
 $ mvn package -Pscala-2.12
 [ ... ]
 INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ scala-parseopts ---
-[INFO] Building jar: /home/tca/src/github/scala-parseopts/target/scala-parseopts-1.5.2_2.12.jar
+[INFO] Building jar: /home/tca/src/github/scala-parseopts/target/scala-parseopts-1.5.6_2.12.jar
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
@@ -93,7 +93,7 @@ is a known cross-compile issue with Scala binary versions and maven.
 
 This project was tested with the following versions:
 - Maven 3.6.x 
-- Java 8, Java 11, Java 17
+- Java 8, 11, 17 (current), 21
 - Scala 2.12, 2.13
 
 
@@ -116,8 +116,8 @@ parent project.
 ```sh
 mvn install:install-file \
   -Dpackaging=jar -DgroupId=com.trace3.util \
-  -DartifactId=scala-parseopts -Dversion=1.5.5_2.13 \
-  -Dfile=target/scala-parseopts-1.5.5_2.13.jar
+  -DartifactId=scala-parseopts -Dversion=1.5.6_2.13 \
+  -Dfile=target/scala-parseopts-1.5.6_2.13.jar
 ```
 
 The maven artifact for this dependency:
@@ -125,7 +125,7 @@ The maven artifact for this dependency:
   <dependency>
       <groupId>com.trace3.util</groupId>
       <artifactId>scala-parseopts</artifactId>
-      <version>1.5.5_2.13</version>
+      <version>1.5.6_2.13</version>
   </dependency>
 ```
 
