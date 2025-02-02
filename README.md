@@ -117,7 +117,7 @@ parent project.
 mvn install:install-file \
   -Dpackaging=jar -DgroupId=com.trace3.util \
   -DartifactId=scala-parseopts -Dversion=1.5.6_2.13 \
-  -Dfile=target/scala-parseopts-1.5.6_2.13.jar
+  -Dfile=target/scala-parseopts-1.5.7_2.13.jar
 ```
 
 The maven artifact for this dependency:
@@ -125,7 +125,7 @@ The maven artifact for this dependency:
   <dependency>
       <groupId>com.trace3.util</groupId>
       <artifactId>scala-parseopts</artifactId>
-      <version>1.5.6_2.13</version>
+      <version>1.5.7_2.13</version>
   </dependency>
 ```
 
