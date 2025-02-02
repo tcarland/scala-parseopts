@@ -22,7 +22,6 @@ remaining arguments.
 This approach works well for use with Apache Spark, and at the least, 
 provides the flexibility of allowing options to be clearly defined 
 and provided in any order.
-
 ```bash
 #!/bin/bash
 MYCLASS="com.foo.bar.example"
@@ -35,7 +34,7 @@ spark-submit --master yarn \
   $@
 ```
 
-## Code
+## The Code
 
 The code for performing the parsing is relatively straight-forward 
 and consists primarily of the following scala function:
@@ -78,7 +77,7 @@ Build the *jar* file via `mvn package`
 $ mvn package -Pscala-2.12
 [ ... ]
 INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ scala-parseopts ---
-[INFO] Building jar: /home/tca/src/github/scala-parseopts/target/scala-parseopts-1.5.6_2.12.jar
+[INFO] Building jar: /home/tca/src/github/scala-parseopts/target/scala-parseopts-1.5.7_2.12.jar
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
