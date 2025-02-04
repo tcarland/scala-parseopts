@@ -9,4 +9,4 @@ RUN apt-get update && \
 COPY . /scala-parseopts
 WORKDIR /scala-parseopts
 
-RUN mvn clean package -DskipTests
+RUN mvn clean package -Pscala-2.13 -DskipTests
