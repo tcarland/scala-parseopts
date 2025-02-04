@@ -77,7 +77,7 @@ Build the *jar* file via `mvn package`
 $ mvn package -Pscala-2.12
 [ ... ]
 INFO] --- maven-jar-plugin:2.4:jar (default-jar) @ scala-parseopts ---
-[INFO] Building jar: /home/tca/src/github/scala-parseopts/target/scala-parseopts-1.5.7_2.12.jar
+[INFO] Building jar: /home/tca/src/github/scala-parseopts/target/scala-parseopts-1.5.9_2.12.jar
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
@@ -114,9 +114,9 @@ Note the scala binary version as described above, which should match the
 parent project.
 ```sh
 mvn install:install-file \
-  -Dpackaging=jar -DgroupId=com.trace3.util \
-  -DartifactId=scala-parseopts -Dversion=1.5.6_2.13 \
-  -Dfile=target/scala-parseopts-1.5.7_2.13.jar
+-Dpackaging=jar -DgroupId=com.trace3.util \
+-DartifactId=scala-parseopts -Dversion=1.5.9_2.13 \
+-Dfile=target/scala-parseopts-1.5.9_2.13.jar
 ```
 
 The maven artifact for this dependency:
@@ -124,7 +124,7 @@ The maven artifact for this dependency:
   <dependency>
       <groupId>com.trace3.util</groupId>
       <artifactId>scala-parseopts</artifactId>
-      <version>1.5.7_2.13</version>
+      <version>1.5.9_2.13</version>
   </dependency>
 ```
 
