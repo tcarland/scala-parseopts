@@ -26,6 +26,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
 
+      - name: Clean working directory 
+        run: mvn -B clean
+
       - name: Build with Maven - scala-2.13
         run: mvn -B -Pscala-2.13 package --file pom.xml
 
